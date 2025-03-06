@@ -264,8 +264,6 @@ Visual Basic在多个行业中有广泛应用:
 
 ## 联系方式
 
-项目维护者: your.email@example.com
+项目维护者: Hoo / wengchinbusiness@gmail.com
 
 ---
-
-*本文档最后更新于: 2023年12月* 
