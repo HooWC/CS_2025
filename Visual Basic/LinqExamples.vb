@@ -213,4 +213,33 @@ Namespace VBExamples
         Public Property StudentId As Integer
         Public Property Courses As List(Of String)
     End Class
+
+    ' 学生类定义
+    Public Class Student
+        Public Property Name As String
+        Public Property Age As Integer
+        Public Property Grade As Double
+    End Class
+
+    ' LINQ示例：使用Lambda表达式查询学生数据
+    Module StudentLinqExamples
+        Sub Main()
+            ' 创建学生列表
+            Dim students As New List(Of Student) From {
+                New Student With {.Name = "张三", .Age = 20, .Grade = 85.5},
+                New Student With {.Name = "李四", .Age = 22, .Grade = 90.0},
+                New Student With {.Name = "王五", .Age = 19, .Grade = 78.0},
+                New Student With {.Name = "赵六", .Age = 21, .Grade = 88.5}
+            }
+
+            ' 查询所有成绩大于80的学生
+            Dim highScorers = students.Where(Function(x) x.Grade > 80).ToList()
+
+            ' 输出结果
+            Console.WriteLine("成绩大于80的学生:")
+            For Each student In highScorers
+                Console.WriteLine($"姓名: {student.Name}, 年龄: {student.Age}, 成绩: {student.Grade}")
+            Next
+        End Sub
+    End Module
 End Namespace 
